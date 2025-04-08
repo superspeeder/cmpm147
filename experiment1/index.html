@@ -23,39 +23,45 @@
 	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
     <script type="text/javascript" src="../js/site.js" DEFER></script>
 	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./js/project.js" DEFER></script>
-	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+    <script src="js/project.js" defer></script>
+
 </head>
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 1 - Getting Started</h1>
 
 			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
-				</div>
-                <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
-                </div>
+				<button id="clicker">
+					reroll it
+				  </button>
+				  <div
+					style="font-family: serif; font-style: italic; border: thin solid gray; padding: 1em; margin: 1em; box-shadow: 2px 2px 5px gray; background: #ffe;"
+					id="box"
+				  ></div>
 			</div>
 
 			<div class="minor-section">
 				<h2>Description</h2>
 				<p>What are you trying to acomplish with this experiment?</p>
+				
+				I wasn't exactly inspired to do this project on making something which generates amazing twists by any specific thing. However, while trying to think of what might be funny to make (this is generally how I go about brainstorming when I can't immediately think of something interesting, I just think "what sounds funny?"). I hope to make this generate interesting results, or at the very least funny. I want the audience of this to find it interesting, even if the interesting part ends up just being laughing at how terrible what it generates are. I also don't particularly want it to generate good story twists, since good ones aren't nearly as interesting as bad ones, at least from the perspective of a generator.
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
 				<p>Describe in detail what you did technically and how it works?</p>
+
+				This experiment didn't really have much technically interesting elements, since (other than integrating into this website) the things we were supposed to mess with were just a series of word lists. It is interesting how interesting the output can be, even if it is pretty easy to make this generate nonsense.
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
 				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+
+				Overall this was an easy experiment, the hardest part was deciding on a theme and even that wasn't really all that hard. I think that I could've made this generate better reading responses by changing the underlying system so that I could have the same word copied in different places in the template text (instead of grabbing a new random word from that list each time), but other than that I think it turned out pretty good.
 			</div>
 
 		</section>
