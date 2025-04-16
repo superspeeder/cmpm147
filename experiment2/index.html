@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 2 - Living Impression</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -18,44 +18,48 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
 	<!-- Load p5.js library -->
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
 
 	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
     <script type="text/javascript" src="../js/site.js" DEFER></script>
-	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./js/project.js" DEFER></script>
-	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+	<script type="text/javascript" src="./js/script.js" DEFER></script>
 </head>
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 2 - Living Impression</h1>
 
-			<div class="minor-section">
+			<div class="minor-section" id="canvas-section">
 				<div id="canvas-container">
 					<!-- canvas will be added here -->
 				</div>
                 <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
+                    <button onclick="seed++">Reimagine</button>
                 </div>
 			</div>
 
 			<div class="minor-section">
+				<img src="/img/experiment2_reference_image.jpg"/>
+			</div>
+
+			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>I tried to replicate this close up rock face that I took a picture of in Zion National Park a couple years ago using filled shapes, and then to make it change over time I slowly shift some of the colors and pan back and forth over the scene.</p>
+				<p>The image pans because this is a still rockface, and so there isn't much else I could do to make the image come alive. The color changes are intentionally subtle, just a kinda interesting extra thing (technically, the idea was that they would be similar to the changes in how light is hitting the scene but I didn't make it try to be accurate to how a light source might move).</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>To get the image I made, I composed a bunch of ellipses placed via noise (which I used to generate offsets instead of raw positions, letting me make sure that I actually continued to change in the direction I wanted to without generating bad looking overlaps. I then color the ellipses by picking random colors between two colors that I took from the original image.</p>
+				<p>There is also a part that is composed quadrilaterals, which was an attempt to replicate the rock formation in the bottom right of the original image, but I'm not entirely sure how successful that was.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>I noticed after I was too far into this one to turn back that this was a much harder image to replicate than I expected it to be (finishing this a day past the deadline definitely was a result of this issue). I honestly don't really like what came out of this, but I'm not sure if I could do any better without spending a lot more time learning how to better organize and generate the strata in the rock so that it actually makes more sense.</p>
+				<p>I came into this experiment much more optimistic in my ability to replicate the image (I first thought I could do it with some fancy wiggling of curves, but that ended up not working out).</p>
 			</div>
 
 		</section>
