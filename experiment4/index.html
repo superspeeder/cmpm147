@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment 4 - Infinite Worlds</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment 4 - Infinite Worlds</h1>
+			<div class="minor-section">
+                <h2>World with Height</h2>
+                <div class="minor-section">
+                    <p>This is a bit awkward to view in the iframe, so you can also view it here: <a href="world_with_height/index.html">world_with_height/index.html</a></p>
+                    <iframe src="world_with_height/index.html" width="100%", height="580"></iframe>
+                </div>
+
+                <div class="minor-section">
+                    <h3>Artist Statement</h3>
+                    <p><strong>Infinity</strong>
+                    I generated an infinite hilly landscape in an isometric view. I generate two distinct kinds of terrain: plains and hills.</p>
+                    <p><strong>Variation in Space</strong>
+                    The heightmap of the world is never the same anywhere, so you can find unique shapes in the terrain wherever you go.</p>
+                    <p><strong>Variation in Key</strong>
+                    The world key serves two purposes in this generator. The key is used to seed the noise function which generates the world, and the length of the key is used to determine the scaling of the noise used (longer keys mean that the world will be more stretched and have more gradual changes in terrain)</p>
+                    <p><strong>Signs of Life</strong>
+                    Anywhere you can go, you can adjust the height of tiles on the grid. These changes are kept between seeds (which can prove very interesting), and can only be removed by manually reverting the change (since you can both raise and lower terrain by clicking) or by using the reset button I added in to the webpage.
+                    Additionally (since it helps with clicking on tiles since I couldn&#39;t get it to figure out which tile is actually under the cursor accounting for height and perspective) the column that your cursor is hovering over is highlighted (though in this case i guess it&#39;s not exactly being lit up but made darker, just enough that it&#39;s visible).</p>
+                </div>    
+                <div class="minor-section">
+                    <h3>Technical Details</h3>
+                    <p>This generator is a pretty simple noise generator which just renders each tile in a column (skipping the ones that might not be visible), moving up by a certain amount for each tile to make the height convincing.
+                        I generate different biomes by adjusting the added height and amplitude of the noise function I sample using a more stretched noise function put through a smoothstep function (letting me get nice edges to biomes instead of sharp edges).</p>
+                </div>
+			</div>
+
+			<div class="minor-section">
+                <h2>Infinite Waterways</h2>
+                <div class="minor-section">
+                    <p>This is a bit awkward to view in the iframe, so you can also view it here: <a href="infinite_waterways/index.html">infinite_waterways/index.html</a></p>
+                    <iframe src="infinite_waterways/index.html" width="100%", height="550"></iframe>
+                </div>
+
+                <div class="minor-section">
+                    <h3>Artist Statement</h3>
+                    <p><strong>Infinity</strong>
+                    I generate an infinite land of small rivers in some flat grass. The world has no elevation (other than the visible height change down to water level in the rivers, which helps sell them as rivers).</p>
+                    <p><strong>Variation in Space</strong>
+                    The actual rivers are not the same anywhere, and are based on noise.</p>
+                    <p><strong>Variation in Key</strong>
+                    The world key in this generator acts as the seed for noise and the length of it determines the concentration of rivers (longer keys get closer to everything being rivers).</p>
+                    <p><strong>Signs of Life</strong>
+                    The world is pretty bland only being rivers and grass, so I gave the user the ability to place trees to make things a bit more interesting. Anywhere you go, you can place a tree (I promise they will never be placed in the water).</p>
+                </div>    
+                <div class="minor-section">
+                    <h3>Technical Details</h3>
+                    <p>This one is a bit interesting on the noise front, since I make the noise have ridges instead of just plain perlin noise (I mainly just check a threshold to see if its good). I did this in hopes that it would make the rivers look a bit more connected (which didn't work as well as I hoped, but I thought it worked well enough). I also do some autotiling to get the rivers to render nicely (letting me seperate the choice of river vs grass and the choice of which tile from my tileset to use).</p>
+                </div>
+			</div>
+			
+			<div class="minor-section">
+                <h2>Infinite Wordsearch</h2>
+                <div class="minor-section">
+                    <p>This is a bit awkward to view in the iframe, so you can also view it here: <a href="infinite_wordsearch/index.html">infinite_wordsearch/index.html</a></p>
+                    <iframe src="infinite_wordsearch/index.html" width="100%", height="550"></iframe>
+                </div>
+
+                <div class="minor-section">
+                    <h3>Artist Statement</h3>
+                    <p><strong>Infinity</strong>
+                    I generated an infinite wordsearch for the word used as the key. I thought this to be an interesting style of infinite world since it's not so much a world as we normally think of, with terrain or cities, but it's a world of letters. Instead, this is infinite wordsearchland.</p>
+                    <p><strong>Variation in Space</strong>
+                    You can scroll forever in any direction and find completely different layouts of characters, meaning that the organization of correct words in the wordsearch should never be repeating.</p>
+                    <p><strong>Variation in Key</strong>
+                    The key is used to seed the noise function used to pick letters, but the actual letters and the correct word come from the world key itself.</p>
+                    <p><strong>Signs of Life</strong>
+                    All of the letters that you see can be clicked on to cycle them to other letters in the key, automatically updating the circling of correct words along with it. You have the power to make the correct words (which might be the only reasonable way to see some correct words with really long non-self-similar keys).</p>
+                </div>    
+                <div class="minor-section">
+                    <h3>Technical Details</h3>
+                    <p>I did the selection of letters by simply sampling noise but at very different positions (I multiplied tile positions by 10 to make sure that I wasn't anywhere near the gradient of the original noise), scaling the output so that I could use it to index the world key, and then using the number to index the key. When you click on a tile, it just adds 1 to a counter which gets added to the index (and then the result of index modulus world key length is used as the actual index to make it cycle). Letters that are not the original value (the index offset modulus key length isn't 0) are colored blue as an indicator (makes it easier to see what is happening when you click something). I find correct words by searching each cardinal direction whenever a letter is the same as the start of the world key. If I can make the whole word, then I draw the circle around the word. Drawing the circle took some doing, mostly just making sure I do the right rotation to line it up with the isometric perspective.</p>
+                </div>
+			</div>
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>
